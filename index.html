@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+  <h2>Resume Builder</h2>
+
+  <form id="resumeForm">
+    <input type="file" id="profileImage" accept="image/*" />
+    <input type="text" id="fullName" placeholder="Your Name" required />
+    <input type="text" id="title" placeholder="Job Title" required />
+    <textarea id="profile" placeholder="Short Profile Summary" rows="4" required></textarea>
+    <input type="text" id="email" placeholder="Email" required />
+    <input type="text" id="phone" placeholder="Phone" required />
+    <input type="text" id="address" placeholder="Address" required />
+
+    <h4>Work Experience</h4>
+    <div id="experienceSection">
+      <div class="exp-entry">
+        <input type="text" placeholder="Job Title" class="jobTitle" required />
+        <input type="text" placeholder="Company Name" class="company" required />
+        <input type="text" placeholder="Duration" class="duration" required />
+        <textarea placeholder="Job Responsibilities" class="jobDetails" rows="3" required></textarea>
+      </div>
+    </div>
+    <button type="button" onclick="addExperience()">Add Experience</button>
+
+    <h4>Education</h4>
+    <div id="educationSection">
+      <div class="edu-entry">
+        <input type="text" placeholder="Degree" class="degree" required />
+        <input type="text" placeholder="Institution" class="institution" required />
+        <input type="text" placeholder="Duration" class="eduDuration" required />
+        <input type="text" placeholder="Grade (e.g. 3.8 GPA or 85%)" class="grade" required />
+      </div>
+    </div>
+    <button type="button" onclick="addEducation()">Add Education</button>
+
+    <h4>Projects</h4>
+    <div id="projectSection">
+      <div class="project-entry">
+        <input type="text" placeholder="Project Title" class="projectTitle" required />
+        <textarea placeholder="Project Description" class="projectDesc" rows="3" required></textarea>
+        <input type="text" placeholder="Project Link (optional)" class="projectLink" />
+      </div>
+    </div>
+    <button type="button" onclick="addProject()">Add Project</button>
+
+    <h4>Skills</h4>
+    <textarea id="skills" placeholder="E.g. SQL, Python, C++, Java" rows="2" required></textarea>
+
+    <h4>Languages</h4>
+    <textarea id="languages" placeholder="E.g. English: Proficient, French: Intermediate" rows="2" required></textarea>
+
+    <button type="submit">Generate Resume</button>
+    <button type="button" id="downloadBtn">Download PDF</button>
+  </form>
+
+  <div class="resume-output" id="resumeOutput"></div>
+
+  <footer>
+    © 2025 Your Name | Built with 💻 using HTML, CSS & JS
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
